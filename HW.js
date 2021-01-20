@@ -10,7 +10,7 @@ alert(tf);
 //a) 
 
 let admin = name;
-let name = 'Василий'ж
+let name = 'Василий';
 
 alert(admin);
 
