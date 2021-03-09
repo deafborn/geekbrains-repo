@@ -31,6 +31,28 @@ function product(item, img) {
             </div>`;
 }
 
-(function fillWithProducts(prodArr) {
+function fillWithProducts(prodArr) {
   document.querySelector('.goods__shop').insertAdjacentHTML('beforeend', prodArr.map(item => product(item, item.img)).join(''));
-}(goods));
+}
+
+fillWithProducts(goods);
+
+function totalPrice() {
+  let finalPrice = document.querySelector('.cart__total');
+  let sum = 0;
+  goods.forEach(item => {
+    sum += item.price;
+  });
+  finalPrice.textContent = `Стоимость вашей покупки - ${sum} рублей`;
+
+}
+
+totalPrice();
+
+//Методы для корзины:
+
+clearCart() //очистить корзину
+backToGoods() //вернуться к покупкам
+checkout() //оформить покупку
+deleteItem() //удалить товар
+addItem() //добавить товар
