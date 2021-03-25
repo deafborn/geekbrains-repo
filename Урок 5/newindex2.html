@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script defer src="scriptnew.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>jsShop</title>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <div class="container">
+                <div class="search">
+                    <input type="text" class="search" v-model="title"><button class="search-button" type="button"
+                    v-on:click="search()">Поиск</button>
+                </div>
+            
+                <div class="wrapper">
+                    <p>Товаров в корзине на <span class="cart__total">{{sum}}</span> рублей.</p>
+                    <button class="cart__button" type="button" v-on:click="openCart()">Корзина</button>
+                </div>
+           
+            <div class="cart">
+                <h3>Корзина</h3>
+                <hr>
+                <div class="cart-list">
+                    <h4 v-if="cartGoods.length == 0">{{emptyCart}} </h4>
+                    <div v-for="item in cartGoods">
+                        <p>{{item.product_name}}&nbsp;&nbsp;
+                            <span class='plusminusbutton' v-on:click="addProduct(item.id_product)">+</span>&nbsp;&nbsp;
+                            <span>{{item.quantity}}</span>&nbsp;&nbsp;
+                            <span class='plusminusbutton' v-on:click="delGood(item.id_product)">-</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+        <main>
+            <hr>
+            <div class="goods__shop" >
+                <h4 v-if="goods.length == 0">{{noData}} </h4>
+                <div class="goods__item" v-for="item in goods" :class = "item.product_name">
+                    <img src="#" alt="image" class="goods__item-img">
+                    <div class="item-title-price">
+                        <h3 class='title'>{{item.product_name}}</h3>
+                        <span class="price">{{item.price}}</span>
+                    </div>
+                    <div class="to-cart"><button class="button" v-on:click="addProduct(item.id_product)"
+                            type="button">Добавить</button></div>
+                </div>
+            </div>
+            <hr>
+        </main>
+    </div>
+
+</body>
+
+
+
+</html> 
