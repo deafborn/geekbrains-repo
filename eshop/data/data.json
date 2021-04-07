@@ -1,0 +1,30 @@
+[
+    {
+        "product_name": "Ботинки",
+        "price": 200
+    },
+    {
+        "product_name": "Пиджак",
+        "price": 200
+    },
+    {
+        "product_name": "Шляпа",
+        "price": 500
+    },
+    {
+        "product_name": "Носки",
+        "price": 450
+    },
+    {
+        "product_name": "Штаны",
+        "price": 800
+    },
+    {
+        "product_name": "Сапоги",
+        "price": 1500
+    },
+    {
+        "product_name": "Рубашка",
+        "price": 280
+    }
+] 
